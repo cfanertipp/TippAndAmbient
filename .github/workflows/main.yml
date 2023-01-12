@@ -13,3 +13,4 @@ jobs:
           reviewers: cfanertipp
           assignees: cfanertipp
           skipKeywords: wip, draft
+          numberOfAssignees: 1
