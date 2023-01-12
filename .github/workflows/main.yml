@@ -9,7 +9,5 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: 'Auto-assign issue'
-              uses: pozil/auto-assign-issue@v1.11.0
               with:
-                  assignees: cfanertipp
-                  numOfAssignee: 1
+                  addassignee: cfanertipp
