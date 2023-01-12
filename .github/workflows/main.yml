@@ -1,15 +1,17 @@
-name: Auto-assign Issue
+name: Label issues
 on:
   issues:
-    types: [opened]
-
+    types:
+      - opened
 jobs:
-    auto-assign:
-        runs-on: ubuntu-latest
-        steps:
-            - name: 'Auto-assign issue'
-              uses: pozil/auto-assign-issue@v1
-              with:
-                  assignees: cfanertipp
-                  numOfAssignee: 1
-                  allowSelfAssign: true
+  label_issues:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - uses: actions/github-script@v6
+        with:
+          script: |
+            github.rest.issues.addLabels({
+              owner: context.repo.owner,
+            })
